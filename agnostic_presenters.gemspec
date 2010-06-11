@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{agnostic_presenters}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicolas M\303\251rouze"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "agnostic_presenters.gemspec",
      "lib/agnostic_presenters.rb",
      "lib/agnostic_presenters/activerecord.rb",
+     "lib/agnostic_presenters/mongoid.rb",
      "lib/agnostic_presenters/mongomapper.rb",
      "lib/base.rb",
      "lib/proxen.rb",
