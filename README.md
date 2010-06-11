@@ -18,13 +18,13 @@ Class.send :include, AgnosticPresenters::Helper
 class MyModel
 
   # ...
-  
+
   presenters do
-    
+
     def myattribute
       "#{object.fancy} with a presenter"
     end
-    
+
   end
 end
 
@@ -44,21 +44,21 @@ AgnosticPresenters::Base.send :include, Helpers</code></pre>
 
 ## Usage with Rails
 
-<pre><code>config.gem "yeastymobs-agnostic_presenters", :lib => "agnostic_presenters/activerecord", :source => "http://gems.github.com"</code></pre>
+<pre><code>config.gem "agnostic_presenters", :lib => "agnostic_presenters/activerecord"</code></pre>
 
 And now you have presenters in your models which include ActionView helpers:
 
 <pre><code>class Article < ActiveRecord::Base
   presenters do
-  
+
     def title
       h object.title
     end
-    
+
     def slug
       object.title.parameterize
     end
-    
+
   end
 end</code></pre>
 
@@ -68,9 +68,14 @@ If you use another ORM, just change "activerecord".
 
 * ActiveRecord "agnostic_presenters/activerecord"
 * MongoMapper "agnostic_presenters/mongomapper"
+* MongoId "agnostic_presenters/mongoid"
 
 ## Credits
 
 * Nicolas Mérouze
 * A part of code is taken from active-record-presenters plugin
 * The proxy part is from nakajima-proxen gem
+
+* Cyril Mougel
+  * Gemify
+  * Add Mongoid support
