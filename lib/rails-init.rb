@@ -1,7 +1,7 @@
-File.join(File.dirname(__FILE__), "../lib/agnostic_presenters")
+require 'base'
 
 if defined?(Rails)
-  AgnosticPresenters::Base.send :include, ActionView::Helpers 
+  AgnosticPresenters::Base.send :include, ActionView::Helpers
 
   class << ActionController::Base
     def add_template_helper_with_presenters(helper_module, *args, &block)
@@ -9,7 +9,7 @@ if defined?(Rails)
       AgnosticPresenters::Base.instance_eval { include helper_module }
       add_template_helper_without_presenters(helper_module, *args, &block)
     end
-  
+
     alias_method_chain :add_template_helper, :presenters
   end
 end
